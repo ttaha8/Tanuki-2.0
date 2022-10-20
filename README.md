@@ -8,7 +8,7 @@ In the project directory, you can run:
 
 ### `Remember installing the dependencies`
 
-Please run `npm install` to install the app dependencies 
+Please run `npm install` to install the app dependencies then run `npm start`.
 
 ### `npm start`
 
