@@ -1,6 +1,6 @@
 .App {
-  /*text-align: center;*/
-  background-color: #282c34;
+  /* text-align: center; */
+  background-color: var(--backgrounds);
   min-height: 100vh;
 }
 
@@ -23,7 +23,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--fonts);;
 }
 
 .App-link {
@@ -39,3 +39,29 @@
   }
 }
 
+.body-container {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  }
+  
+  .selector-area { 
+    grid-area: 1 / 1 / 2 / 2;
+    overflow-x: auto;
+    max-height: calc(100vh - 4rem);
+   }
+  
+  
+   .form-area { 
+    grid-area: 1 / 2 / 2 / 6;
+    max-height: calc(100vh - 4rem);
+    overflow-x: auto;
+   }
+  
+   .progress-area { 
+    grid-area: 1 / 6 / 2 / 10;
+    max-height: calc(100vh - 4rem);
+    overflow-x: auto;
+   }

@@ -7,7 +7,7 @@
   }
   
   .tool-form__checkbox-label {
-      color: white;
+      color: var(--fonts);;
       font-size: inherit;
   }
 
@@ -22,7 +22,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    color: white;
+    color: var(--fonts);;
   }
   
   /* Hide the browser's default checkbox */
@@ -51,7 +51,7 @@
   
   /* When the checkbox is checked, add a blue background */
   .tool-form__checkbox-container input:checked ~ .checkmark {
-    background-color: #ff0055;
+    background-color: var(--headers);;
   }
   
   /* Create the checkmark/indicator (hidden when not checked) */
@@ -72,7 +72,7 @@
     top: 5px;
     width: 5px;
     height: 10px;
-    border: solid white;
+    border: solid var(--fonts);;
     border-width: 0 3px 3px 0;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);

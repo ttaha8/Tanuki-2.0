@@ -1,19 +1,11 @@
 import React from 'react';
-import './ToolSelector.css'
+import NavLinks from '../shared/Navigation/NavLinks/NavLinks';
+import './ToolSelector.css';
 
-const ToolSelector = (props) => {
-
-  const options = props.tools.map(({ id, title }) => <option key={id} value={id} className="tool-selection__option">{title}</option>)
-  
-  const handleChange = event => props.onChange(event.target.value)
+const ToolSelector = props => {
   
   return (
-    <div className='tool-selection'>
-      <div className='tool-selection__title'>Please Choose a Conversion Mode:</div>
-      <select className="tool-selection__select" size="10" onChange={handleChange}>
-        {options}
-      </select>
-    </div>
+      <aside className='side-drawer'><NavLinks tools={props.tools} change={props.change}/></aside>
   )
 }
 

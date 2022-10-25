@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react'
+import React, { useEffect ,useState, useCallback } from 'react'
 import { useDropzone } from "react-dropzone";
 
 import './Dropzone.css'
@@ -14,21 +14,30 @@ const Dropzone = props => {
 
   }, []);
 
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })
+  useEffect(()=>{
+    setSelectedFiles([])
+  },[props.control])
+
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({ ...props.extraValidation, onDrop })
+
+  const classes = `dropzone ${props.errorClass}`;
+
+  const fileTypes = props.extraValidation.hasOwnProperty('accept') ? props.extraValidation.accept["application/file"].join(", ") : false;
 
   return (
-    <>
+    <div className='dropzone-container'>
       <label className='dropzone-label'>{props.label}</label>
-      <div className='drop-zone' {...getRootProps()}>
+      <div className={classes} {...getRootProps()}>
         <input {...getInputProps()} {...props.register} />
+
         {
-          /*isDragActive ? <p>Drop the files here ...</p> : <p>Drag 'n' drop some files here, or click to select files</p>*/
+        selectedFiles.length === 0 ?
+          <><p className='dropzone-innertext'>Drag 'n' drop your file(s) here, or click to select</p> {fileTypes && <p className='dropzone-innertext'>Accepts ({fileTypes})</p>}</> :
+          <p className='dropzone-innertext'>You have selected {selectedFiles.length} file(s)</p>
         }
-        {selectedFiles.length === 0 ?
-          <p>Drag 'n' drop some files here, or click to select files</p> : <p>You have selected {selectedFiles.length} file(s)</p>}
       </div>
       {props.errors && <span className='error'>must drop at least one file</span>}
-    </>
+    </div>
   )
 }
 

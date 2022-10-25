@@ -3,34 +3,42 @@
 }
 
 .tool-form__select-label {
-  color: white;
-  display: block;
+  color: var(--fonts);;
+  /* display: block; */
+  display: flex;
   margin: 0.5rem 0 0.3rem 0;
   font-size: 1.2rem;
 }
 
 
 .tool-form__select {
+  border: 0;
   width: 20rem;
   height: 3rem;
   border-radius: 5px;
   margin: 0;
   font-size: 1.2rem;
   padding: 0.5rem;
+  
+}
+
+.tool-form__select:focus {
+  box-shadow:none;
 }
 
 .tool-form__option {
   height: 3rem;
   padding: 0.5rem;
   font-size: 1.2rem;
+  background: var(--fonts);
 }
 
 .error {
-  color:#ff0055;
+  color:var(--headers);;
   margin: 0.2rem 0 0 0;
   display: block;
 }
 
 .error-border {
-  border: #f34343 5px solid;
+  border: var(--headers) 5px solid;
 }

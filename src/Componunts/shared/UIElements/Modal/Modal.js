@@ -4,7 +4,6 @@ import { CSSTransition } from 'react-transition-group';
 
 import Backdrop from '../Backdrop/Backdrop';
 
-
 import './Modal.css'
 
 
@@ -15,9 +14,6 @@ const ModalOverlay = props => {
         <h2>{props.header}</h2>
       </header>
       <form onSubmit={props.onSubmit ? props.onSubmit : event => event.preventDefault()}>
-        <div className={`modal__content ${props.contentClass}`}>
-          {props.children}
-        </div>
         <footer className={`modal__footer ${props.footerClass}`}>
           {props.footer}
         </footer>
@@ -30,9 +26,6 @@ const ModalOverlay = props => {
 
 
 const Modal = props => {
-  
-  
-  
   return (
     <>
     {props.show && <Backdrop onClick={props.onCancel} />}

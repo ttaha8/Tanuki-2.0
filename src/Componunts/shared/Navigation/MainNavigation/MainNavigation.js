@@ -12,7 +12,7 @@ const MainNavigation = props => {
 
       <MainHeader>
         <h1 className='main-navigation__title'>
-          Tanuki
+          Tanuki 2.0
         </h1>
         <nav className='main-navigation__header-nav'>
         </nav>
