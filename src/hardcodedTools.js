@@ -29,7 +29,10 @@ const dropzone = (label, name, validation)=>{
   const res = {
     id:id,
     type: "DROPZONE",
-    validation,
+    validation: {
+      maxSize: 200 * 1000000, // Dropzpne max size in bytes 1 mb = 1,000,000
+      ...validation
+    },
     label, name
   };
   return res;
