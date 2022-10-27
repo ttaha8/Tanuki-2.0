@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import ReactDOM from 'react-dom';
 
 import { useForm } from "react-hook-form";
 
@@ -7,7 +6,6 @@ import Checkbox from '../FormElements/Checkbox/Checkbox';
 import Input from '../FormElements/Input/Input';
 import Select from '../FormElements/Select/Select';
 import Dropzone from '../FormElements/Dropzone/Dropzone';
-import Card from '../shared/UIElements/Card/Card';
 import Modal from '../shared/UIElements/Modal/Modal';
 
 import './Form.css';
@@ -34,7 +32,7 @@ const Form = (props) => {
   
   useEffect(() => {
     reset()
-  }, [props])
+  }, [props, reset])
 
 
   const clearModal= ()=> {

@@ -33,7 +33,7 @@ function App() {
       setTool();
     }
 
-  },[location]);
+  },[location, toolChangeHandler]);
   
   
   const tempInlineStyle = {

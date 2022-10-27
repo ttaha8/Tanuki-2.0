@@ -6,19 +6,24 @@ import './Dropzone.css'
 const Dropzone = props => {
 
   const [selectedFiles, setSelectedFiles] = useState([]);
+  const [errors, setErrors] = useState([]);
 
-  const onDrop = useCallback(acceptedFiles => {
+
+  const onDrop = useCallback((acceptedFiles,rejectedFiles) => {
+
+    setErrors(Array.from(rejectedFiles));
     const files = Array.from(acceptedFiles);
+
     setSelectedFiles(files);
     props.setFiles(props.myName, files);
 
-  }, []);
+  }, [props]);
 
   useEffect(()=>{
     setSelectedFiles([])
   },[props.control])
 
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({ ...props.extraValidation, onDrop })
+  const { getRootProps, getInputProps } = useDropzone({ ...props.extraValidation, onDrop })
 
   const classes = `dropzone ${props.errorClass}`;
 
@@ -37,6 +42,7 @@ const Dropzone = props => {
         }
       </div>
       {props.errors && <span className='error'>must drop at least one file</span>}
+        {errors.length > 0 && <span className='error'>Some files has been rejected due to file size or type</span>}
     </div>
   )
 }

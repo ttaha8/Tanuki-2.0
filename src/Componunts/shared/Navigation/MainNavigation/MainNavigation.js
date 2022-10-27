@@ -1,12 +1,10 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 import MainHeader from '../MainHeader/MainHeader';
 
 import './MainNavigation.css';
 
-const MainNavigation = props => {
-
-  const [drawerIsOpen, setDrawerIsOpen] = useState(false);
+const MainNavigation = () => {
 
   return (
 
