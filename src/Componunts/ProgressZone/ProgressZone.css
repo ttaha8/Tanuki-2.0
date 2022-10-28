@@ -1,0 +1,16 @@
+.progress-zone {
+    background: var(--backgrounds);
+    color: var(--fonts);
+    margin: 2rem;
+}
+
+.progress-table {
+    width: 90%;
+    text-align: left;
+    background: var(--backgrounds);
+    color: var(--fonts);
+}
+
+.progress-card {
+    width: 90%;
+}

@@ -6,9 +6,14 @@ import './App.css';
 import MainNavigation from './Componunts/shared/Navigation/MainNavigation/MainNavigation';
 import ToolSelector from './Componunts/ToolSelectror/ToolSelector';
 import Form from './Componunts/Form/Form';
-
+import ProgressZone from './Componunts/ProgressZone/ProgressZone';
 
 import { tools } from './hardcodedTools';
+import { tasks } from './hardcodedTasks';
+// const tasks = [{id: 55, tool: "Metadata to OTP", progress: 15}]
+
+
+
 
 function App() {
   
@@ -36,9 +41,6 @@ function App() {
   },[location, toolChangeHandler]);
   
   
-  const tempInlineStyle = {
-    color: 'var(--fonts)',
-  };
   return (
     <div className="App">
         <MainNavigation />
@@ -50,7 +52,7 @@ function App() {
             {tool && <Form toolData={tool} />}
           </div>
           <div className="progress-area">
-            <h2 style={tempInlineStyle}>Progress Placeholder Zone</h2>
+            <ProgressZone tasks={tasks}/>
           </div>
         </div>
     </div>
